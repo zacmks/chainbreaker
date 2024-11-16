@@ -1,10 +1,10 @@
 import codecs
-from distutils.util import convert_path
+import os
 
 from setuptools import find_packages, setup
 
 main_ns = {}
-ver_path = convert_path('chainbreaker/version.py')
+ver_path = os.path.normcase('chainbreaker/version.py')
 with open(ver_path) as ver_file:
     exec(ver_file.read(), main_ns)
 
@@ -28,6 +28,10 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
     ],
     entry_points={
         'console_scripts': ['chainbreaker=chainbreaker:main'],
